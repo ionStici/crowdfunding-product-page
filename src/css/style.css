@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Commissioner", sans-serif;
+}
+
+.header {
+  height: 300px;
+  padding: 32px 22px 32px 24px;
+  background-image: url(./../images/image-hero-mobile.jpg);
+  background-size: cover;
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__open-menu, .header__clone-menu {
+  cursor: pointer;
+  padding: 2px;
+}
+.header__open-menu {
+  padding: 2px;
+}
+@media only screen and (min-width: 768px) {
+  .header__open-menu {
+    display: none;
+  }
+}
+.header__close-menu {
+  display: none;
+}
+
+.nav {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */
