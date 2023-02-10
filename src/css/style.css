@@ -11,6 +11,7 @@
 
 body {
   font-family: "Commissioner", sans-serif;
+  background-color: #fafafa;
 }
 
 .header {
@@ -19,29 +20,190 @@ body {
   background-image: url(./../images/image-hero-mobile.jpg);
   background-size: cover;
 }
+@media only screen and (min-width: 600px) {
+  .header {
+    height: 400px;
+    padding: 32px;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .header {
+    background-image: url(./../images/image-hero-desktop.jpg);
+    background-position: bottom;
+    padding-top: 40px;
+  }
+}
 .header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
-.header__open-menu, .header__clone-menu {
+@media only screen and (min-width: 600px) {
+  .header__container {
+    max-width: 1174px;
+    margin: 0 auto;
+  }
+}
+.header__open-menu, .header__close-menu {
   cursor: pointer;
   padding: 2px;
+}
+.header__open-menu:hover, .header__close-menu:hover {
+  opacity: 0.9;
 }
 .header__open-menu {
   padding: 2px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
   .header__open-menu {
     display: none;
   }
 }
 .header__close-menu {
   display: none;
+  position: relative;
+  z-index: 3;
+}
+
+.nav-open .header__open-menu {
+  display: none;
+}
+
+@media only screen and (max-width: 599px) {
+  .nav-open .header__close-menu {
+    display: block;
+  }
 }
 
 .nav {
-  display: none;
+  transition: height 0.2s, opacity 0.2s, visibility 0.2s;
+}
+@media only screen and (max-width: 599px) {
+  .nav {
+    position: absolute;
+    top: 56px;
+    z-index: 2;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.0497193);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+.nav ul {
+  list-style: none;
+}
+@media only screen and (min-width: 600px) {
+  .nav ul {
+    display: flex;
+  }
+}
+.nav li {
+  transition: opacity 0.2s;
+  opacity: 0;
+}
+@media only screen and (min-width: 600px) {
+  .nav li {
+    opacity: 1;
+  }
+}
+.nav li:not(:last-child) {
+  border-bottom: 1px solid rgba(47, 47, 47, 0.1);
+}
+@media only screen and (min-width: 600px) {
+  .nav li:not(:last-child) {
+    border-bottom: revert;
+    margin-right: 32px;
+  }
+}
+.nav__link, .nav__link:link, .nav__link:visited {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  display: block;
+  padding: 24px;
+}
+.nav__link:hover, .nav__link:link:hover, .nav__link:visited:hover {
+  background-color: hsl(176deg, 50%, 47%);
+  color: #fff;
+}
+@media only screen and (min-width: 600px) {
+  .nav__link:hover, .nav__link:link:hover, .nav__link:visited:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .nav__link, .nav__link:link, .nav__link:visited {
+    padding: 0;
+    font-size: 13px;
+    line-height: 16px;
+    color: #ffffff;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .nav-open {
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .nav-open .nav {
+    height: 212px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: revert;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .nav-open-height .nav {
+    height: 212px;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .nav-open-opacity .nav li {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .nav__layout {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 400px 200px rgba(0, 0, 0, 0.5) inset;
+    transition: opacity 0.2s, visibility 0.2s, background-color 0.2s, box-shadow 0.2s;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .nav__layout {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .nav-open .nav__layout {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: revert;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
