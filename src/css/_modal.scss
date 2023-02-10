@@ -1,0 +1,216 @@
+.open-modal .modal__layout {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: revert;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    &__layout {
+        position: fixed;
+        z-index: 10;
+        left: 0;
+        top: 0;
+
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-color: transparent;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition: opacity 0.2s, visibility 0.2s, background-color 0.2s;
+    }
+
+    &__container {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.0497193);
+        border-radius: 8px;
+
+        position: absolute;
+        z-index: 15;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 121px;
+
+        width: 87%;
+        padding: 32px 24px 32px 24px;
+
+        @media only screen and (min-width: 600px) {
+            top: 184px;
+        }
+
+        @media only screen and (min-width: 768px) {
+            width: 730px;
+            padding: 48px;
+        }
+    }
+
+    &__close-icon {
+        position: absolute;
+        top: 36px;
+        right: 24px;
+
+        cursor: pointer;
+
+        @media only screen and (min-width: 600px) {
+            top: 32px;
+            right: 32px;
+        }
+    }
+
+    &__h2 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #000000;
+        margin-bottom: 24px;
+
+        @media only screen and (min-width: 600px) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: #7a7a7a;
+        margin-bottom: 24px;
+
+        @media only screen and (min-width: 600px) {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__boxes {
+    }
+
+    &__box {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        padding: 32px 24px;
+        position: relative;
+        cursor: pointer;
+
+        @media only screen and (min-width: 600px) {
+            padding: 35px 28px 32px 28px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+
+        &--inactive {
+            opacity: 0.5;
+        }
+
+        &__header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 33px;
+
+            @media only screen and (min-width: 600px) {
+                align-items: flex-start;
+                margin-bottom: 10px;
+            }
+        }
+
+        &__header div {
+            @media only screen and (min-width: 600px) {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        &__h3 {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            color: #000000;
+
+            @media only screen and (min-width: 600px) {
+                font-size: 16px;
+                line-height: 20px;
+                margin-right: 16px;
+            }
+        }
+
+        &__circle {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 16px;
+
+            @media only screen and (min-width: 600px) {
+                margin-right: 22px;
+            }
+        }
+
+        &__price {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            color: #3cb3ab;
+            margin-top: 8px;
+
+            @media only screen and (min-width: 600px) {
+                margin-top: 0;
+            }
+        }
+
+        &__p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: #7a7a7a;
+
+            @media only screen and (min-width: 600px) {
+                font-size: 15px;
+                line-height: 28px;
+                padding-left: 45px;
+            }
+        }
+
+        &__num-box {
+            display: flex;
+            align-items: center;
+            margin-top: 24px;
+
+            @media only screen and (min-width: 600px) {
+                position: absolute;
+                margin-top: 0;
+                top: 34px;
+                right: 28px;
+            }
+        }
+
+        &__num {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            color: #000000;
+            margin-right: 8px;
+        }
+
+        &__left {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 18px;
+            color: #7a7a7a;
+        }
+    }
+}
+
+.modal {
+    display: none;
+
+    &__layout {
+        // display: none;
+    }
+}
