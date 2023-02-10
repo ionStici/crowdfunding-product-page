@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <header class="header">
+    <header class="header" id="top">
         <div class="header__container">
             <img class="header__logo" src="./src/images/logo.svg" alt="A mac desktop setup">
             <img class="header__open-menu" src="./src/images/icon-hamburger.svg" alt="">
@@ -93,7 +93,7 @@
                             <p class="about__box__num">101</p>
                             <p class="about__box__left">left</p>
                         </div>
-                        <button class="btn">Select Reward</button>
+                        <button class="btn btn-select-bamboo">Select Reward</button>
                     </div>
                 </div>
 
@@ -108,7 +108,7 @@
                             <p class="about__box__num">64</p>
                             <p class="about__box__left">left</p>
                         </div>
-                        <button class="btn">Select Reward</button>
+                        <button class="btn btn-select-black">Select Reward</button>
                     </div>
                 </div>
 
@@ -132,22 +132,22 @@
         <div class="modal__layout"></div>
         <section class="modal">
             <div class="modal__container">
-                <svg class="modal__close-icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z" fill="#000" fill-rule="evenodd" opacity=".4"/></svg>
+                <svg class="modal__close-icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg"><path class="modal__close-icon-opacity" d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z" fill="#000" fill-rule="evenodd" opacity=".4"/></svg>
                 <h2 class="modal__h2">Back this project</h2>
                 <p class="modal__p">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 
 
                 <div class="modal__boxes">
 
+
                     <div class="modal__box">
                         <div class="modal__box__header">
                             <div class="modal__box__circle"></div>
                             <h3 class="modal__box__h3">Pledge with no reward</h3>
                         </div>
-
-                        <p class="modal__box__p">Choose to support us without a reward if you simply believe in our project. As a backer, 
-                            you will be signed up to receive product updates via email.</p>
+                        <p class="modal__box__p">Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
                     </div>
+
 
                     <div class="modal__box">
                         <div class="modal__box__header">
@@ -158,13 +158,17 @@
                             </div>
                         </div>
 
-                            <p class="modal__box__p">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p>
+                        <p class="modal__box__p">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p>
 
                         <div class="modal__box__num-box">
                             <p class="modal__box__num">101</p>
                             <p class="modal__box__left">left</p>
                         </div>
+
+                        <div class="modal__box__active-box modal__box__active-box--bamboo">
+                        </div>
                     </div>
+
 
                     <div class="modal__box">
                         <div class="modal__box__header">
@@ -175,13 +179,17 @@
                             </div>
                         </div>
 
-                            <p class="modal__box__p">You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
+                        <p class="modal__box__p">You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
 
                         <div class="modal__box__num-box">
                             <p class="modal__box__num">64</p>
                             <p class="modal__box__left">left</p>
                         </div>
+
+                        <div class="modal__box__active-box modal__box__active-box--black">
+                        </div>
                     </div>
+
 
                     <div class="modal__box modal__box--inactive">
                         <div class="modal__box__header">
@@ -192,7 +200,7 @@
                             </div>
                         </div>
 
-                            <p class="modal__box__p">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
+                        <p class="modal__box__p">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
 
                         <div class="modal__box__num-box">
                             <p class="modal__box__num">0</p>
@@ -200,6 +208,7 @@
                         </div>
                     </div>
 
+                    
                 </div>
             </div>
         </section>

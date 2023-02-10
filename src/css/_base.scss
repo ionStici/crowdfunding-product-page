@@ -9,13 +9,16 @@
     box-sizing: border-box;
 }
 
-button {
+button,
+input,
+label {
     font: inherit;
 }
 
 body {
     font-family: 'Commissioner', sans-serif;
     background-color: #fafafa;
+    scroll-behavior: smooth;
 }
 
 .h1 {
