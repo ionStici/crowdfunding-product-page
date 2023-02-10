@@ -54,10 +54,14 @@ body {
   line-height: 20px;
   color: #ffffff;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.2s;
 }
 .btn:hover {
   background-color: #147a73;
+}
+.btn:active {
+  transform: scale(0.95);
+  background-color: #3cb3ab;
 }
 
 .header {
@@ -308,6 +312,7 @@ body {
 }
 .back__bookmark-text {
   display: none;
+  transition: color 0.15s;
 }
 @media only screen and (min-width: 768px) {
   .back__bookmark-text {
@@ -318,6 +323,26 @@ body {
     display: revert;
     margin-left: 16px;
   }
+}
+.back__bookmark-text::selection {
+  color: #7a7a7a;
+}
+
+.back__bookmark-icon-path,
+.back__bookmark-icon-circle {
+  transition: fill 0.2s;
+}
+
+.bookmarked .back__bookmark-icon-path {
+  fill: #fff;
+}
+
+.bookmarked .back__bookmark-icon-circle {
+  fill: #147a73;
+}
+
+.bookmarked .back__bookmark-text {
+  color: #147a73;
 }
 
 .u-back-h1-margin-bottom {

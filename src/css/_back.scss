@@ -54,11 +54,9 @@
         }
     }
 
-    &__bookmark-icon {
-    }
-
     &__bookmark-text {
         display: none;
+        transition: color 0.15s;
 
         @media only screen and (min-width: 768px) {
             font-weight: 700;
@@ -68,7 +66,28 @@
             display: revert;
             margin-left: 16px;
         }
+
+        &::selection {
+            color: #7a7a7a;
+        }
     }
+}
+
+.back__bookmark-icon-path,
+.back__bookmark-icon-circle {
+    transition: fill 0.2s;
+}
+
+.bookmarked .back__bookmark-icon-path {
+    fill: #fff;
+}
+
+.bookmarked .back__bookmark-icon-circle {
+    fill: #147a73;
+}
+
+.bookmarked .back__bookmark-text {
+    color: #147a73;
 }
 
 // UTILITIES

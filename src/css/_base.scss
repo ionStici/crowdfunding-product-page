@@ -54,9 +54,14 @@ body {
     color: #ffffff;
 
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
 
     &:hover {
         background-color: #147a73;
+    }
+
+    &:active {
+        transform: scale(0.95);
+        background-color: #3cb3ab;
     }
 }
