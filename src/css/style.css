@@ -951,10 +951,44 @@ body {
 }
 .modal__box__active-box__wrapper {
   margin-top: 16px;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
 }
 @media only screen and (min-width: 600px) {
   .modal__box__active-box__wrapper {
     margin-top: 0;
+  }
+}
+@media only screen and (max-width: 358px) {
+  .modal__box__active-box__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}
+.modal__box__active-box__wrapper::after {
+  content: "$";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  opacity: 0.25;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 24px;
+}
+@media only screen and (max-width: 385px) {
+  .modal__box__active-box__wrapper::after {
+    left: 18px;
+  }
+}
+@media only screen and (max-width: 358px) {
+  .modal__box__active-box__wrapper::after {
+    transform: revert;
+    top: 15px;
+    left: 24px;
   }
 }
 .modal__box__active-box__input {
@@ -973,6 +1007,19 @@ body {
   cursor: pointer;
   /* Firefox */
   caret-color: #3cb3ab;
+}
+@media only screen and (max-width: 385px) {
+  .modal__box__active-box__input {
+    width: 90px;
+    margin-right: 10px;
+  }
+}
+@media only screen and (max-width: 358px) {
+  .modal__box__active-box__input {
+    width: 100%;
+    text-align: center;
+    padding-right: 0;
+  }
 }
 .modal__box__active-box__input::-webkit-outer-spin-button, .modal__box__active-box__input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -995,12 +1042,14 @@ body {
   line-height: 17px;
   color: #000000;
   opacity: 0.25;
-  position: relative;
-  z-index: 20;
-  right: -35px;
 }
 .modal__box__active-box .btn {
-  padding: 15px 25px 16px 26px;
+  padding: 15px 24px 16px 24px;
+}
+@media only screen and (max-width: 385px) {
+  .modal__box__active-box .btn {
+    padding: 14px 20px;
+  }
 }
 
 .modal__box--active .modal__box__active-box {

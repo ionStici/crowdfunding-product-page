@@ -306,9 +306,44 @@
 
             &__wrapper {
                 margin-top: 16px;
+                position: relative;
+
+                width: fit-content;
+                margin: 0 auto;
 
                 @media only screen and (min-width: 600px) {
                     margin-top: 0;
+                }
+
+                @media only screen and (max-width: 358px) {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 10px;
+                }
+
+                &::after {
+                    content: '$';
+
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #000000;
+                    opacity: 0.25;
+
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 24px;
+
+                    @media only screen and (max-width: 385px) {
+                        left: 18px;
+                    }
+
+                    @media only screen and (max-width: 358px) {
+                        transform: revert;
+                        top: 15px;
+                        left: 24px;
+                    }
                 }
             }
 
@@ -321,6 +356,17 @@
                 position: relative;
                 padding-right: 37px;
                 text-align: right;
+
+                @media only screen and (max-width: 385px) {
+                    width: 90px;
+                    margin-right: 10px;
+                }
+
+                @media only screen and (max-width: 358px) {
+                    width: 100%;
+                    text-align: center;
+                    padding-right: 0;
+                }
 
                 font-weight: 700;
                 font-size: 14px;
@@ -358,13 +404,14 @@
                 line-height: 17px;
                 color: #000000;
                 opacity: 0.25;
-                position: relative;
-                z-index: 20;
-                right: -35px;
             }
 
             .btn {
-                padding: 15px 25px 16px 26px;
+                padding: 15px 24px 16px 24px;
+
+                @media only screen and (max-width: 385px) {
+                    padding: 14px 20px;
+                }
             }
         }
     }

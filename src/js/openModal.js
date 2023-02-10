@@ -20,7 +20,6 @@ const btnBlack = document.querySelector('.btn-select-black');
 const markup = `
 <p class="modal__box__active-box__text">Enter tour pledge</p>
 <div class="modal__box__active-box__wrapper">
-    <label class="modal__box__active-box__label">$</label>
     <input class="modal__box__active-box__input" type="number">
     <button class="btn">Continue</button>
 </div>
