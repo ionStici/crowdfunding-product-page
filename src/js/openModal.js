@@ -1,3 +1,25 @@
+// PROGRESS BAR
+
+const progressBar = document.querySelector('.sum__progress-bar');
+const pledgeEl = document.querySelector('.sum__col-nums');
+
+let sum = 89914;
+const max = 100000;
+let percentages = (sum * 100) / max;
+
+const calcNewPledge = function (pledge) {
+    if (pledge <= max - sum && pledge > 0) {
+        sum += +pledge;
+        pledgeEl.textContent = sum;
+        setProgressBar((sum * 100) / max);
+    }
+};
+
+const setProgressBar = val =>
+    document.documentElement.style.setProperty('--progress-bar', `${val}%`);
+
+setTimeout(() => setProgressBar(percentages), 250);
+
 // SUBMIT
 
 const firstBox = document.querySelector('.modal__box');
@@ -6,25 +28,32 @@ const modalMain = document.querySelector('.modal__container--main');
 const modalSubmit = document.querySelector('.modal__submit');
 // const btnsSubmit = document.querySelectorAll('.btn--continue');
 
+let pledge;
+
 const submitModal = function (event) {
     if (event.target.textContent === 'Continue') {
-        setTimeout(
-            () => (modalMain.style.transform = 'translateX(-50%) scale(0)'),
-            150
-        );
+        setTimeout(() => {
+            modalMain.style.transform = 'translateX(-50%) scale(0)';
+            location.href = '#top';
+            setTimeout(() => (location.href = '#'), 50);
+        }, 150);
 
         setTimeout(
             () => (modalSubmit.style.transform = 'translateX(-50%) scale(1)'),
             300
         );
 
+        pledge = event.target.previousElementSibling.value;
+        calcNewPledge(pledge);
+
         return;
     }
 
-    setTimeout(
-        () => (modalMain.style.transform = 'translateX(-50%) scale(0)'),
-        350
-    );
+    setTimeout(() => {
+        modalMain.style.transform = 'translateX(-50%) scale(0)';
+        location.href = '#top';
+        setTimeout(() => (location.href = '#'), 50);
+    }, 350);
 
     setTimeout(
         () => (modalSubmit.style.transform = 'translateX(-50%) scale(1)'),

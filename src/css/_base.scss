@@ -15,10 +15,13 @@ label {
     font: inherit;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Commissioner', sans-serif;
     background-color: #fafafa;
-    scroll-behavior: smooth;
 }
 
 .h1 {
