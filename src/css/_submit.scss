@@ -1,0 +1,53 @@
+.modal__submit {
+    transform: translateX(-50%) scale(0);
+    text-align: center;
+    padding: 32px 24px 40px 24px;
+
+    @media only screen and (min-width: 600px) {
+        padding: 48px;
+    }
+
+    &__icon {
+        display: inline-block;
+        margin-bottom: 24px;
+        width: 64px;
+        height: 64px;
+
+        @media only screen and (min-width: 600px) {
+            margin-bottom: 48px;
+            transform: scale(1.4);
+        }
+    }
+
+    &__h2 {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #000000;
+        margin-bottom: 24px;
+
+        @media only screen and (min-width: 600px) {
+            font-size: 24px;
+            line-height: 29px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: #7a7a7a;
+        margin-bottom: 31.5px;
+
+        @media only screen and (min-width: 600px) {
+            font-size: 16px;
+            line-height: 30px;
+            margin-bottom: 32px;
+        }
+    }
+
+    .btn {
+        padding: 15px 32px 16px 33px;
+    }
+}

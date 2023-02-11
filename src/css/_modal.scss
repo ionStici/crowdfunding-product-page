@@ -48,7 +48,8 @@
         visibility: hidden;
         pointer-events: none;
 
-        transition: opacity 0.2s 0.1s, visibility 0.2s 0.1s;
+        transition: opacity 0.2s 0.1s, visibility 0.2s 0.1s,
+            transform 0.3s ease-in-out;
 
         @media only screen and (min-width: 600px) {
             top: 184px;
@@ -105,8 +106,6 @@
         }
     }
 
-    // &__boxes {}
-
     &__box {
         background: #ffffff;
         border: 1px solid rgba(0, 0, 0, 0.15);
@@ -127,7 +126,7 @@
 
         &--active {
             border: 1px solid #3cb3ab;
-            outline: 1px solid #3cb3ab;
+            box-shadow: 0 0 0 1px #3cb3ab;
         }
 
         @media only screen and (min-width: 600px) {
@@ -305,14 +304,15 @@
             }
 
             &__wrapper {
-                margin-top: 16px;
+                // margin-top: 16px;
                 position: relative;
 
                 width: fit-content;
-                margin: 0 auto;
+                margin: 16px auto 0 auto;
 
                 @media only screen and (min-width: 600px) {
                     margin-top: 0;
+                    margin: revert;
                 }
 
                 @media only screen and (max-width: 358px) {

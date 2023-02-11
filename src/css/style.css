@@ -713,7 +713,7 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s 0.1s, visibility 0.2s 0.1s;
+  transition: opacity 0.2s 0.1s, visibility 0.2s 0.1s, transform 0.3s ease-in-out;
 }
 @media only screen and (min-width: 600px) {
   .modal__container {
@@ -786,7 +786,7 @@ body {
 }
 .modal__box--active {
   border: 1px solid #3cb3ab;
-  outline: 1px solid #3cb3ab;
+  box-shadow: 0 0 0 1px #3cb3ab;
 }
 @media only screen and (min-width: 600px) {
   .modal__box {
@@ -950,14 +950,14 @@ body {
   }
 }
 .modal__box__active-box__wrapper {
-  margin-top: 16px;
   position: relative;
   width: fit-content;
-  margin: 0 auto;
+  margin: 16px auto 0 auto;
 }
 @media only screen and (min-width: 600px) {
   .modal__box__active-box__wrapper {
     margin-top: 0;
+    margin: revert;
   }
 }
 @media only screen and (max-width: 358px) {
@@ -1062,6 +1062,60 @@ body {
   .modal__box--active .modal__box__active-box {
     margin-top: 57px;
   }
+}
+
+.modal__submit {
+  transform: translateX(-50%) scale(0);
+  text-align: center;
+  padding: 32px 24px 40px 24px;
+}
+@media only screen and (min-width: 600px) {
+  .modal__submit {
+    padding: 48px;
+  }
+}
+.modal__submit__icon {
+  display: inline-block;
+  margin-bottom: 24px;
+  width: 64px;
+  height: 64px;
+}
+@media only screen and (min-width: 600px) {
+  .modal__submit__icon {
+    margin-bottom: 48px;
+    transform: scale(1.4);
+  }
+}
+.modal__submit__h2 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  margin-bottom: 24px;
+}
+@media only screen and (min-width: 600px) {
+  .modal__submit__h2 {
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 16px;
+  }
+}
+.modal__submit__p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #7a7a7a;
+  margin-bottom: 31.5px;
+}
+@media only screen and (min-width: 600px) {
+  .modal__submit__p {
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 32px;
+  }
+}
+.modal__submit .btn {
+  padding: 15px 32px 16px 33px;
 }
 
 /*# sourceMappingURL=style.css.map */

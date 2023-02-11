@@ -1,3 +1,41 @@
+// SUBMIT
+
+const firstBox = document.querySelector('.modal__box');
+const modal = document.querySelector('.modal');
+const modalMain = document.querySelector('.modal__container--main');
+const modalSubmit = document.querySelector('.modal__submit');
+// const btnsSubmit = document.querySelectorAll('.btn--continue');
+
+const submitModal = function (event) {
+    if (event.target.textContent === 'Continue') {
+        setTimeout(
+            () => (modalMain.style.transform = 'translateX(-50%) scale(0)'),
+            150
+        );
+
+        setTimeout(
+            () => (modalSubmit.style.transform = 'translateX(-50%) scale(1)'),
+            300
+        );
+
+        return;
+    }
+
+    setTimeout(
+        () => (modalMain.style.transform = 'translateX(-50%) scale(0)'),
+        350
+    );
+
+    setTimeout(
+        () => (modalSubmit.style.transform = 'translateX(-50%) scale(1)'),
+        550
+    );
+};
+
+firstBox.addEventListener('click', submitModal);
+
+// ELEMENTS
+
 const main = document.querySelector('.main');
 const modalLayout = document.querySelector('.modal__layout');
 const modalWindow = document.querySelector('.modal');
@@ -21,7 +59,7 @@ const markup = `
 <p class="modal__box__active-box__text">Enter tour pledge</p>
 <div class="modal__box__active-box__wrapper">
     <input class="modal__box__active-box__input" type="number">
-    <button class="btn">Continue</button>
+    <button class="btn btn--continue">Continue</button>
 </div>
 `;
 
@@ -57,6 +95,10 @@ btnBamboo.addEventListener('click', function () {
     subBoxBambo.insertAdjacentHTML('afterbegin', markup);
     subBoxBambo.closest('.modal__box').classList.add(activeBoxClass);
     document.querySelector('.modal__box__active-box__input').value = 25;
+
+    subBoxBambo
+        .querySelector('.btn--continue')
+        .addEventListener('click', submitModal);
 });
 
 btnBlack.addEventListener('click', function () {
@@ -68,6 +110,10 @@ btnBlack.addEventListener('click', function () {
     subBoxBlack.insertAdjacentHTML('afterbegin', markup);
     subBoxBlack.closest('.modal__box').classList.add(activeBoxClass);
     document.querySelector('.modal__box__active-box__input').value = 75;
+
+    subBoxBlack
+        .querySelector('.btn--continue')
+        .addEventListener('click', submitModal);
 });
 
 // MODAL BOXES
@@ -98,6 +144,10 @@ modalBoxes.forEach(box => {
                     subBox.querySelector(
                         '.modal__box__active-box__input'
                     ).value = 25;
+
+                    subBoxBambo
+                        .querySelector('.btn--continue')
+                        .addEventListener('click', submitModal);
                 }
 
                 if (
@@ -109,6 +159,10 @@ modalBoxes.forEach(box => {
                     subBox.querySelector(
                         '.modal__box__active-box__input'
                     ).value = 75;
+
+                    subBoxBlack
+                        .querySelector('.btn--continue')
+                        .addEventListener('click', submitModal);
                 }
             } else if (box.classList.contains(activeBoxClass)) {
                 box.classList.remove(activeBoxClass);
@@ -133,3 +187,6 @@ modalBoxes.forEach(box => {
         }
     });
 });
+
+const submitBtn = document.querySelector('.btn--submit');
+submitBtn.addEventListener('click', () => main.classList.remove('open-modal'));
